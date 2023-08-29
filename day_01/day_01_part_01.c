@@ -1,23 +1,23 @@
-/* Starting Advent of Code 2022 */
-
 #include <stdio.h>
 #include <stdlib.h>
 
 #define MAX_INPUT 32
 
-int main(void)
+void day_01_part_01()
 {
 	FILE *fptr;
 	char cal_list[MAX_INPUT];
 	int n_max = 0;
 	int c_max = 0;
 
-	fptr = fopen("text_input_1.txt", "r");
+	fptr = fopen("inputs/text_input_1.txt", "r");
+
 	if (!fptr)
 	{
 		printf("File does  not exist.");
-		return 1;
+		return;
 	}
+
 	while (fgets(cal_list, MAX_INPUT, fptr))
 	{
 		if (*cal_list == '\n')
@@ -37,6 +37,4 @@ int main(void)
 	fclose(fptr);
 
 	printf("C Max: %d\n", c_max);
-	return 0;
-
 }
